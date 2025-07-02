@@ -21,11 +21,11 @@ A modern and interactive dashboard application built with React and Vite.
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/your-username/my-dashboard-app.git
+    git clone https://github.com/your-username/service-status-dashboard.git
     ```
 2.  Navigate to the project directory:
     ```bash
-    cd my-dashboard-app
+    cd service-status-dashboard
     ```
 3.  Install the dependencies:
     ```bash
