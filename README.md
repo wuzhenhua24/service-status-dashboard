@@ -1,4 +1,4 @@
-# My Dashboard App
+# service-status-dashboard
 
 A modern and interactive dashboard application built with React and Vite.
 
