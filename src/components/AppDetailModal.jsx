@@ -7,7 +7,7 @@ import './AppDetailModal.css';
  * 应用详情模态框组件 (最终修复版)
  * 我们简化了 JSX 结构，使其更加标准和健壮
  */
-export default function AppDetailModal({ isOpen, onClose, app, details }) {
+export default function AppDetailModal({ isOpen, onClose, app, details, onExited }) {
 
   const renderOwnerContent = () => {
     if (details.loading) {
@@ -20,7 +20,7 @@ export default function AppDetailModal({ isOpen, onClose, app, details }) {
   };
 
   return (
-    <Transition appear show={isOpen} as={Fragment}>
+    <Transition appear show={isOpen} as={Fragment} afterLeave={onExited}>
       <Dialog as="div" className="modal-container" onClose={onClose}>
         {/* 第一层 Transition.Child 用于背景遮罩层的过渡动画
         */}

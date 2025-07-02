@@ -107,9 +107,15 @@ function App() {
     }
   };
 
+  // ✅ 步骤 1: 简化 closeModal，它只负责关闭
   const closeModal = () => {
     setIsModalOpen(false);
+  };
+
+  // ✅ 步骤 2: 创建一个新的回调函数，专门用于在动画结束后重置状态
+  const handleModalExited = () => {
     setAppDetails({ loading: false, owners: [] });
+    setSelectedApp(null);
   };
   
   const sensors = useSensors(useSensor(PointerSensor, {
@@ -202,7 +208,8 @@ function App() {
         isOpen={isModalOpen} 
         onClose={closeModal} 
         app={selectedApp} 
-        details={appDetails} 
+        details={appDetails}
+        onExited={handleModalExited} 
       />
     </>
   );
