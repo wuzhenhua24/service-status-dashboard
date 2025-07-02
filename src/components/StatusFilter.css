@@ -1,0 +1,35 @@
+/* src/components/StatusFilter.css */
+.status-filter-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .status-filter-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+  
+  .status-filter-select {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    
+    /* Glassmorphism style */
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .status-filter-select:focus {
+    outline: none;
+    border-color: rgba(96, 165, 250, 0.6);
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+  }
+  

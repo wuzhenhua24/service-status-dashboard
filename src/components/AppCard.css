@@ -1,0 +1,47 @@
+/* src/components/AppCard.css */
+.app-card {
+    padding: 24px;
+    border-radius: 16px;
+    cursor: pointer; /* 改为 pointer 表示可点击 */
+    
+    /* 玻璃拟态 */
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    
+    /* 动画效果 */
+    transition: transform 0.3s ease, box-shadow 0.4s ease, border-color 0.3s ease;
+  }
+  
+  .app-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* 状态辉光 */
+  .app-card.glow-green { box-shadow: 0 0 20px -5px var(--glow-green); }
+  .app-card.glow-yellow { box-shadow: 0 0 20px -5px var(--glow-yellow); }
+  .app-card.glow-red { box-shadow: 0 0 20px -5px var(--glow-red); }
+  .app-card.glow-blue { box-shadow: 0 0 20px -5px var(--glow-blue); }
+  
+  
+  .app-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    color: var(--text-primary);
+  }
+  
+  .app-status-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0;
+    opacity: 0.9;
+  }
+  
+  /* 状态颜色 */
+  .status-running { color: #4ade80; }
+  .status-degraded { color: #facc15; }
+  .status-down { color: #f87171; }
+  .status-starting { color: #93c5fd; }

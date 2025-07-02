@@ -1,0 +1,85 @@
+/* src/App.css */
+
+/*
+  主滚动容器，为虚拟化提供基础。
+*/
+.dashboard-container {
+  padding: 0 32px;
+  max-width: 1600px;
+  margin: 0 auto;
+  height: 100vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/*
+  页眉部分，使用粘性定位使其在滚动时固定在顶部。
+*/
+.dashboard-header {
+  text-align: center;
+  padding-top: 32px;
+  margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+  background-color: var(--dark-bg); /* 需要背景色以防下方内容穿透 */
+  z-index: 10;
+}
+
+.dashboard-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.connection-status {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 8px;
+  height: 20px;
+}
+
+/*
+  用于包裹两个筛选器的容器
+*/
+.filters-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* 筛选器之间的间距 */
+  margin-top: 24px;
+  flex-wrap: wrap; /* 在小屏幕上换行 */
+}
+
+/*
+  虚拟化列表的外部容器，其样式主要由虚拟化 Hook 的内联样式控制，
+  用于撑开滚动条。
+*/
+.virtual-list-container {
+  /* 此处无需特定样式 */
+}
+
+/*
+  这是最核心的布局样式，用于渲染每一行
+*/
+.virtual-grid-row {
+  display: grid;
+  /* 将行内部分为 4 列，每列占据相等的空间。
+    注意：这里的 '4' 需要和 App.jsx 中的 columnCount 变量保持一致。
+  */
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 20px; /* 卡片之间的水平和垂直间距 */
+  padding: 10px 0; /* 每一行上下的额外间距，避免行与行贴得太近 */
+}
+
+
+/*
+  加载和无结果提示的样式
+*/
+.loading-indicator,
+.no-results {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 50px;
+  color: var(--text-secondary);
+}
